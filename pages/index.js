@@ -5,7 +5,7 @@ const Scores = props => {
   return (
     <div className="main">
       <h1>
-        <span className="header-prefix">Latest Bundesliga </span>Scores ⚽
+        <span className="header-prefix">Latest Bundesliga&nbsp;</span>Scores ⚽
       </h1>
       <ul>
         {props.matches.map(match => {
@@ -34,6 +34,7 @@ const Scores = props => {
       </ul>
       <style jsx global>{`
         body {
+          background-color: ghostwhite;
           font-family: sans;
         }
       `}</style>
