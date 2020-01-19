@@ -57,6 +57,7 @@ const MatchEntry = ({ match }) => {
         }
         .score-line-start {
           justify-content: end;
+          justify-self: end;
         }
         .score-line-end {
           justify-content: start;
