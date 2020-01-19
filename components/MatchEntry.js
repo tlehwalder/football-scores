@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import get from "lodash/get";
 import isEmpty from "lodash/isEmpty";
+import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";
 
 import GoalList from "./GoalList";
 
@@ -89,6 +90,11 @@ const MatchEntry = ({ match }) => {
         li:nth-of-type(odd) {
           background-color: #f2f2f2;
         }
+        @media (max-width: ${BREAKPOINT_MEDIUM_IN_PX}) {
+          .team-name {
+            display: none;
+          }
+
       `}</style>
     </>
   );

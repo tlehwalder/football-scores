@@ -1,50 +1,21 @@
 import fetch from "isomorphic-unfetch";
 
-import MatchEntry from "./components/MatchEntry";
-import Header from "./components/Header";
+import Header from "../components/Header";
+import MatchList from "../components/MatchList";
+import Main from "../layout/Main";
 
 const Scores = props => {
   return (
-    <div className="main">
+    <Main>
       <Header />
-      <ul>
-        {props.matches.map(match => {
-          return <MatchEntry match={match} />;
-        })}
-      </ul>
+      <MatchList matches={props.matches} />
       <style jsx global>{`
         body {
           background-color: ghostwhite;
           font-family: sans;
         }
       `}</style>
-      <style jsx>
-        {`
-          ul {
-            padding: 0;
-            width: 50%;
-            box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
-            border-radius: 12px;
-          }
-
-          .main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-
-          @media (max-width: 980px) {
-            ul {
-              width: 100%;
-            }
-
-            .team-name {
-              display: none;
-            }
-          }
-        `}
-      </style>
-    </div>
+    </Main>
   );
 };
 
