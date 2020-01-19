@@ -6,42 +6,53 @@ import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";
 import GoalList from "./GoalList";
 
 const MatchEntry = ({ match }) => {
-  const [isGoalsShown, setGoalsShown] = useState(false);
+  const [isGoalListShown, setGoalListShown] = useState(false);
 
-  const pointsTeam1 = get(match, "MatchResults[0].PointsTeam1", "-");
-  const pointsTeam2 = get(match, "MatchResults[0].PointsTeam2", "-");
+  const teamHomePoints = get(match, "MatchResults[0].PointsTeam1", "-");
+  const teamAwayPoints = get(match, "MatchResults[0].PointsTeam2", "-");
 
-  const scoreLineInner = isEmpty(match.Goals) ? (
-    <>
-      {pointsTeam1}:{pointsTeam2}
-    </>
-  ) : (
-    <div onClick={() => setGoalsShown(!isGoalsShown)}>
-      {pointsTeam1}:{pointsTeam2}
+  const {
+    Team1: teamHome,
+    Team2: teamAway,
+    MatchIsFinished: isFinished,
+    Goals: goals,
+    MatchID: matchId
+  } = match;
+
+  const { TeamName: teamHomeName, TeamIconUrl: teamHomeIcon } = teamHome;
+  const { TeamName: teamAwayName, TeamIconUrl: teamAwayIcon } = teamAway;
+
+  const isAnyGoalScored = !isEmpty(goals);
+
+  const toggleGoalList = () => setGoalListShown(!isGoalListShown);
+
+  const scoreLineInner = isAnyGoalScored ? (
+    <div onClick={toggleGoalList}>
+      {teamHomePoints}:{teamAwayPoints}
     </div>
+  ) : (
+    <>
+      {teamHomePoints}:{teamAwayPoints}
+    </>
   );
 
   return (
     <>
-      <li>
+      <li key={matchId}>
         <div className="score-line">
           <div className="score-line-element score-line-start">
-            <span className="home-team team-name">{match.Team1.TeamName}</span>
-            <img src={match.Team1.TeamIconUrl} />
+            <span className="home-team team-name">{teamHomeName}</span>
+            <img src={teamHomeIcon} />
           </div>
-          <div
-            className={`score-line-element ${
-              match.MatchIsFinished ? "finished-match" : "on-going-match"
-            } ${isEmpty(match.Goals) ? "" : "expandable"}`}
-          >
+          <div className="score-line-element score-line-inner">
             {scoreLineInner}
           </div>
           <div className="score-line-element score-line-end">
-            <img src={match.Team2.TeamIconUrl} />
-            <span className="team-name">{match.Team2.TeamName}</span>
+            <img src={teamAwayIcon} />
+            <span className="team-name">{teamAwayName}</span>
           </div>
         </div>
-        {isGoalsShown ? <GoalList goals={match.Goals} /> : null}
+        {isGoalListShown ? <GoalList goals={goals} /> : null}
       </li>
       <style jsx>{`
         .score-line {
@@ -55,25 +66,22 @@ const MatchEntry = ({ match }) => {
           justify-content: center;
           align-items: center;
         }
+
+        .score-line-inner {
+          cursor: ${isAnyGoalScored ? "pointer" : "initial"};
+          font-weight: ${isFinished ? "bold" : "initial"};
+          color: ${isFinished ? "initial" : "#85144b"}
+        }
+
         .score-line-start {
           justify-content: end;
           justify-self: end;
         }
         .score-line-end {
           justify-content: start;
+          justify-self: start;
         }
 
-        .finished-match {
-          font-weight: bold;
-        }
-
-        .expandable {
-          cursor: pointer;
-        }
-
-        .on-going-match {
-          color: #85144b;
-        }
         img {
           margin: 0 10px;
           max-width: 1.3em;

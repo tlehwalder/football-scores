@@ -5,8 +5,8 @@ import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";
 const MatchList = ({ matches }) => (
   <>
     <ul>
-      {matches.map(match => {
-        return <MatchEntry match={match} />;
+      {matches.map((match, _i) => {
+        return <MatchEntry key={_i} match={match} />;
       })}
     </ul>
     <style jsx>
