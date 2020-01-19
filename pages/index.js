@@ -1,5 +1,5 @@
 import fetch from "isomorphic-unfetch";
-import get from "lodash/get";
+import MatchEntry from "./components/MatchEntry";
 
 const Scores = props => {
   return (
@@ -9,27 +9,7 @@ const Scores = props => {
       </h1>
       <ul>
         {props.matches.map(match => {
-          const pointsTeam1 = get(match, "MatchResults[0].PointsTeam1", "-");
-          const pointsTeam2 = get(match, "MatchResults[0].PointsTeam2", "-");
-          return (
-            <li>
-              <div className="score-line">
-                <div className="score-line-element score-line-start">
-                  <span className="home-team team-name">
-                    {match.Team1.TeamName}
-                  </span>
-                  <img src={match.Team1.TeamIconUrl} />
-                </div>
-                <div className="score-line-element">
-                  {pointsTeam1}:{pointsTeam2}
-                </div>
-                <div className="score-line-element score-line-end">
-                  <img src={match.Team2.TeamIconUrl} />
-                  <span className="team-name">{match.Team2.TeamName}</span>
-                </div>
-              </div>
-            </li>
-          );
+          return <MatchEntry match={match} />;
         })}
       </ul>
       <style jsx global>{`
@@ -50,47 +30,12 @@ const Scores = props => {
             border-radius: 12px;
           }
 
-          li {
-            list-style: none;
-          }
-
           .main {
             display: flex;
             flex-direction: column;
             align-items: center;
           }
 
-          .score-line {
-            display: flex;
-            margin: 5px 0;
-            display: grid;
-            grid-template-columns: 4fr 1fr 4fr;
-          }
-          .score-line-element {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          .score-line-start {
-            justify-content: end;
-          }
-          .score-line-end {
-            justify-content: start;
-          }
-
-          li:nth-of-type(odd) {
-            background-color: #eee;
-          }
-
-          img {
-            margin: 0 10px;
-            max-width: 1.3em;
-            max-height: 1.3em;
-          }
-          .home-team {
-            display: flex;
-            flex-direction: row-reverse;
-          }
 
           @media (max-width: 980px) {
             ul {
