@@ -15,8 +15,7 @@ const MatchEntry = ({ match }) => {
     Team1: teamHome,
     Team2: teamAway,
     MatchIsFinished: isFinished,
-    Goals: goals,
-    MatchID: matchId
+    Goals: goals
   } = match;
 
   const { TeamName: teamHomeName, TeamIconUrl: teamHomeIcon } = teamHome;
@@ -38,7 +37,7 @@ const MatchEntry = ({ match }) => {
 
   return (
     <>
-      <li key={matchId}>
+      <li>
         <div className="score-line">
           <div className="score-line-element score-line-start">
             <span className="home-team team-name">{teamHomeName}</span>
