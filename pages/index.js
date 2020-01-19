@@ -1,12 +1,12 @@
 import fetch from "isomorphic-unfetch";
+
 import MatchEntry from "./components/MatchEntry";
+import Header from "./components/Header";
 
 const Scores = props => {
   return (
     <div className="main">
-      <h1>
-        <span className="header-prefix">Latest Bundesliga&nbsp;</span>Scores ⚽
-      </h1>
+      <Header />
       <ul>
         {props.matches.map(match => {
           return <MatchEntry match={match} />;
@@ -20,9 +20,6 @@ const Scores = props => {
       `}</style>
       <style jsx>
         {`
-          h1 {
-            display: flex;
-          }
           ul {
             padding: 0;
             width: 50%;
@@ -36,17 +33,12 @@ const Scores = props => {
             align-items: center;
           }
 
-
           @media (max-width: 980px) {
             ul {
               width: 100%;
             }
 
             .team-name {
-              display: none;
-            }
-            @media (max-width: 580px) {
-            .header-prefix {
               display: none;
             }
           }
