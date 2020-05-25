@@ -91,6 +91,10 @@ const MatchEntry = ({ match }) => {
           flex-direction: row-reverse;
         }
 
+        .team-name {
+          white-space: nowrap;
+        }
+
         li {
           list-style: none;
         }
@@ -101,7 +105,6 @@ const MatchEntry = ({ match }) => {
         @media (max-width: ${BREAKPOINT_MEDIUM_IN_PX}) {
           .team-name {
             display: none;
-            white-space: nowrap;
           }
 
       `}</style>
