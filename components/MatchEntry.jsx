@@ -15,7 +15,7 @@ const MatchEntry = ({ match }) => {
     Team1: teamHome,
     Team2: teamAway,
     MatchIsFinished: isFinished,
-    Goals: goals
+    Goals: goals,
   } = match;
 
   const { TeamName: teamHomeName, TeamIconUrl: teamHomeIcon } = teamHome;
@@ -101,6 +101,7 @@ const MatchEntry = ({ match }) => {
         @media (max-width: ${BREAKPOINT_MEDIUM_IN_PX}) {
           .team-name {
             display: none;
+            white-space: nowrap;
           }
 
       `}</style>
