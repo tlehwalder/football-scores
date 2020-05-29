@@ -2,11 +2,15 @@ import React from "react";
 
 const Main = ({ children }) => (
   <>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
     <div className="main">{children}</div>
     <style jsx global>{`
       body {
         background-color: ghostwhite;
-        font-family: sans;
+        font-family: "Nunito", sans-serif;
       }
     `}</style>
     <style jsx>

@@ -70,6 +70,12 @@ const MatchEntry = ({ match }) => {
           cursor: ${isAnyGoalScored ? "pointer" : "initial"};
           font-weight: ${isFinished ? "bold" : "initial"};
           color: ${isFinished ? "initial" : "#85144b"}
+
+
+        }
+
+        .score-line-inner:hover {
+            color: #949494;
         }
 
         .score-line-start {
@@ -85,6 +91,7 @@ const MatchEntry = ({ match }) => {
           margin: 0 10px;
           max-width: 1.3em;
           max-height: 1.3em;
+          flex-shrink: 0;
         }
         .home-team {
           display: flex;
@@ -92,7 +99,7 @@ const MatchEntry = ({ match }) => {
         }
 
         .team-name {
-          white-space: nowrap;
+          flex-shrink: 0;
         }
 
         li {

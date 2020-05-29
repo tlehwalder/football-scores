@@ -8,8 +8,10 @@ const Scores = ({ matchDay, matches }) => {
 
 export default Scores;
 
-Scores.getInitialProps = async function () {
-  const res = await fetch("https://www.openligadb.de/api/getmatchdata/bl1");
+Scores.getInitialProps = async function (ctx) {
+  const res = await fetch(
+    `https://www.openligadb.de/api/getmatchdata/bl1/2019/${ctx.query.matchDay}`
+  );
   const data = await res.json();
 
   return {
