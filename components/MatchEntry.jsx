@@ -64,6 +64,7 @@ const MatchEntry = ({ match }) => {
           display: flex;
           justify-content: center;
           align-items: center;
+          width: 100%;
         }
 
         .score-line-inner {
@@ -79,8 +80,8 @@ const MatchEntry = ({ match }) => {
         }
 
         .score-line-start {
-          justify-content: end;
-          justify-self: end;
+          justify-content: flex-end;
+          justify-self: flex-end;
         }
         .score-line-end {
           justify-content: start;

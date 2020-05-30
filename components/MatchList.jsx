@@ -12,8 +12,7 @@ const MatchList = ({ matches }) => (
     <style jsx>
       {`
         ul {
-          padding: 0;
-          width: 50%;
+          padding: 1rem;
           box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
           border-radius: 12px;
           font-size: x-large;
