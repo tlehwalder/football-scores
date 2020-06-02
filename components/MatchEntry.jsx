@@ -4,8 +4,11 @@ import isEmpty from "lodash/isEmpty";
 import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";
 
 import GoalList from "./GoalList";
+import ThemeContext from "../context/ThemeContext";
 
 const MatchEntry = ({ match }) => {
+  const theme = React.useContext(ThemeContext);
+
   const [isGoalListShown, setGoalListShown] = useState(false);
 
   const teamHomePoints = get(match, "MatchResults[0].PointsTeam1", "-");
@@ -70,7 +73,9 @@ const MatchEntry = ({ match }) => {
         .score-line-inner {
           cursor: ${isAnyGoalScored ? "pointer" : "initial"};
           font-weight: ${isFinished ? "bold" : "initial"};
-          color: ${isFinished ? "initial" : "#85144b"}
+          color: ${
+            isFinished ? (theme === "dark" ? "white" : "initial") : "#85144b"
+          }
 
 
         }
@@ -108,7 +113,8 @@ const MatchEntry = ({ match }) => {
         }
 
         li:nth-of-type(odd) {
-          background-color: #f2f2f2;
+          background-color: ${theme === "dark" ? "#797979" : "#f2f2f2"};
+
         }
         @media (max-width: ${BREAKPOINT_MEDIUM_IN_PX}) {
           .team-name {

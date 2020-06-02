@@ -2,8 +2,11 @@ import Header from "../components/Header";
 import MatchList from "../components/MatchList";
 import MatchDayNavigation from "../components/MatchDayNavigation";
 import Main from "../layout/Main";
+import ThemeContext from "../context/ThemeContext";
 
 const MatchDayPage = ({ matches, matchDay }) => {
+  const theme = React.useContext(ThemeContext);
+
   return (
     <Main>
       <Header matchDay={matchDay} />
@@ -11,7 +14,7 @@ const MatchDayPage = ({ matches, matchDay }) => {
       <MatchDayNavigation matchDay={matchDay} />{" "}
       <style jsx global>{`
         body {
-          background-color: ghostwhite;
+          background-color: ${theme === "dark" ? "#282828" : "ghostwhite"};
           font-family: "Nunito", sans-serif;
         }
       `}</style>
