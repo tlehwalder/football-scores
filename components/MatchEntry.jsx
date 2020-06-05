@@ -4,7 +4,7 @@ import isEmpty from "lodash/isEmpty";
 import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";
 
 import GoalList from "./GoalList";
-import ThemeContext from "../context/ThemeContext";
+import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 
 const MatchEntry = ({ match }) => {
   const theme = React.useContext(ThemeContext);
@@ -74,7 +74,11 @@ const MatchEntry = ({ match }) => {
           cursor: ${isAnyGoalScored ? "pointer" : "initial"};
           font-weight: ${isFinished ? "bold" : "initial"};
           color: ${
-            isFinished ? (theme === "dark" ? "white" : "initial") : "#85144b"
+            isFinished
+              ? theme === THEME_DARK
+                ? "white"
+                : "initial"
+              : "#85144b"
           }
 
 

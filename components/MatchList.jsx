@@ -1,8 +1,7 @@
 import React from "react";
 import MatchEntry from "./MatchEntry";
 import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";
-
-import ThemeContext from "../context/ThemeContext";
+import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 
 const MatchList = ({ matches }) => {
   const theme = React.useContext(ThemeContext);
@@ -19,7 +18,7 @@ const MatchList = ({ matches }) => {
         ul {
           padding: 1rem;
           box-shadow: 0 2px 6px 0 hsla(0, 0%, ${
-            theme === "dark" ? "100%" : "0%"
+            theme === THEME_DARK ? "100%" : "0%"
           }, 0.2);
           border-radius: 12px;
           font-size: x-large;

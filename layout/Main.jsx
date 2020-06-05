@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeContext from "../context/ThemeContext";
+import ThemeContext, { THEME_LIGHT, THEME_DARK } from "../context/ThemeContext";
 import startCase from "lodash/startCase";
 
 const Main = ({ children }) => {
@@ -7,7 +7,9 @@ const Main = ({ children }) => {
   const [themeToggleState, setThemeToggleState] = React.useState(theme);
 
   function toggleTheme() {
-    setThemeToggleState(themeToggleState === "dark" ? "light" : "dark");
+    setThemeToggleState(
+      themeToggleState === THEME_DARK ? THEME_LIGHT : THEME_DARK
+    );
   }
 
   return (
@@ -22,10 +24,10 @@ const Main = ({ children }) => {
       </ThemeContext.Provider>
       <style jsx global>{`
         body {
-          background-color: ${themeToggleState === "dark"
+          background-color: ${themeToggleState === THEME_DARK
             ? "#282828"
             : "ghostwhite"};
-          color: ${themeToggleState === "dark" ? "white" : "black"};
+          color: ${themeToggleState === THEME_DARK ? "white" : "black"};
           font-family: "Nunito", sans-serif;
         }
       `}</style>

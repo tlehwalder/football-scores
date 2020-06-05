@@ -1,6 +1,6 @@
 import React from "react";
 
-import ThemeContext from "../context/ThemeContext";
+import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 
 const GoalEntry = ({ isHomeGoal, playerName, matchMinute }) => {
   const theme = React.useContext(ThemeContext);
@@ -23,7 +23,7 @@ const GoalEntry = ({ isHomeGoal, playerName, matchMinute }) => {
           grid-template-columns: 8fr 1fr 8fr;
           list-style: none;
           font-size: 11px;
-          color: ${theme === "dark" ? "white" : "#aaa"};
+          color: ${theme === THEME_DARK ? "white" : "#aaa"};
         }
 
         .goal-home {
