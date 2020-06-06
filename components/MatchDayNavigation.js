@@ -1,6 +1,10 @@
+import React from "react";
 import Link from "next/link";
+import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 
 const MatchDayNavigaiton = ({ matchDay }) => {
+  const theme = React.useContext(ThemeContext);
+
   return (
     <div>
       {matchDay >= 1 ? (
@@ -38,10 +42,10 @@ const MatchDayNavigaiton = ({ matchDay }) => {
         }
 
         .triangle-right {
-          border-left: 30px solid black;
+          border-left: 30px solid ${theme === THEME_DARK ? "white" : "black"};
         }
         .triangle-left {
-          border-right: 30px solid black;
+          border-right: 30px solid ${theme === THEME_DARK ? "white" : "black"};
         }
 
         .triangle-right:hover {
