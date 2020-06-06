@@ -78,6 +78,8 @@ const MatchEntry = ({ match }) => {
               ? theme === THEME_DARK
                 ? "white"
                 : "initial"
+              : theme == THEME_DARK
+              ? "#30c5f2"
               : "#85144b"
           }
 
