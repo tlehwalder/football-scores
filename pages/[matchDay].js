@@ -10,7 +10,7 @@ export default Scores;
 
 Scores.getInitialProps = async function (ctx) {
   const res = await fetch(
-    `https://www.openligadb.de/api/getmatchdata/bl1/2019/${ctx.query.matchDay}`
+    `https://www.openligadb.de/api/getmatchdata/bl1/2020/${ctx.query.matchDay}`
   );
   const data = await res.json();
 
