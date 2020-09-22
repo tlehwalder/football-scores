@@ -6,3 +6,7 @@ https://football-scores.now.sh/
 Run locally:
 
 `yarn dev`
+
+## Features
+- dark and light mode
+- matchday browsing
