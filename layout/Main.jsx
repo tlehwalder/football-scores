@@ -6,7 +6,9 @@ import { parseCookies, setCookie, destroyCookie } from "nookies";
 const Main = ({ children }) => {
   const cookies = parseCookies();
   const theme = React.useContext(ThemeContext);
-  const [themeToggleState, setThemeToggleState] = React.useState(cookies.theme);
+  const [themeToggleState, setThemeToggleState] = React.useState(
+    cookies.theme || theme
+  );
 
   function toggleTheme() {
     const nextTheme =
