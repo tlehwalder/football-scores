@@ -118,7 +118,7 @@ const MatchEntry = ({ match }) => {
           list-style: none;
         }
 
-        li:nth-of-type(odd) {
+        li:nth-of-type(2n+1) {
           background-color: ${theme === "dark" ? "#919191" : "#f2f2f2"};
 
         }
