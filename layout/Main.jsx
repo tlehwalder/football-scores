@@ -1,15 +1,20 @@
 import React from "react";
 import ThemeContext, { THEME_LIGHT, THEME_DARK } from "../context/ThemeContext";
 import startCase from "lodash/startCase";
+import { parseCookies, setCookie, destroyCookie } from "nookies";
 
 const Main = ({ children }) => {
+  const cookies = parseCookies();
   const theme = React.useContext(ThemeContext);
-  const [themeToggleState, setThemeToggleState] = React.useState(theme);
+  const [themeToggleState, setThemeToggleState] = React.useState(cookies.theme);
 
   function toggleTheme() {
-    setThemeToggleState(
-      themeToggleState === THEME_DARK ? THEME_LIGHT : THEME_DARK
-    );
+    const nextTheme =
+      themeToggleState === THEME_DARK ? THEME_LIGHT : THEME_DARK;
+    setThemeToggleState(nextTheme);
+    setCookie(null, "theme", nextTheme, {
+      path: "/",
+    });
   }
 
   return (
