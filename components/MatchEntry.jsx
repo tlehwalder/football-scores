@@ -119,7 +119,7 @@ const MatchEntry = ({ match }) => {
         }
 
         li:nth-of-type(odd) {
-          background-color: ${theme === "dark" ? "#797979" : "#f2f2f2"};
+          background-color: ${theme === "dark" ? "#919191" : "#f2f2f2"};
 
         }
         @media (max-width: ${BREAKPOINT_MEDIUM_IN_PX}) {
