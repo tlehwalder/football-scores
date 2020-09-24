@@ -40,7 +40,7 @@ const MatchEntry = ({ match }) => {
 
   return (
     <>
-      <li>
+      <li className="score-line-wrapper">
         <div className="score-line">
           <div className="score-line-element score-line-start">
             <span className="home-team team-name">{teamHomeName}</span>
@@ -118,9 +118,8 @@ const MatchEntry = ({ match }) => {
           list-style: none;
         }
 
-        li:nth-of-type(2n+1) {
-          background-color: ${theme === "dark" ? "#919191" : "#f2f2f2"};
-
+        .score-line-wrapper:nth-of-type(2n+1) {
+          background-color: #ff6a00;
         }
         @media (max-width: ${BREAKPOINT_MEDIUM_IN_PX}) {
           .team-name {
