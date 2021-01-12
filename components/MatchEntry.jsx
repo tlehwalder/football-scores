@@ -73,15 +73,6 @@ const MatchEntry = ({ match }) => {
         .score-line-inner {
           cursor: ${isAnyGoalScored ? "pointer" : "initial"};
           font-weight: ${isFinished ? "bold" : "initial"};
-          color: ${
-            isFinished
-              ? theme === THEME_DARK
-                ? "white"
-                : "initial"
-              : theme == THEME_DARK
-              ? "#30c5f2"
-              : "#85144b"
-          }
 
 
         }
@@ -120,6 +111,7 @@ const MatchEntry = ({ match }) => {
 
         .score-line-wrapper:nth-of-type(2n+1) {
           background-color: #ff6a00;
+          color: white;
         }
         @media (max-width: ${BREAKPOINT_MEDIUM_IN_PX}) {
           .team-name {
