@@ -23,7 +23,7 @@ const GoalEntry = ({ isHomeGoal, playerName, matchMinute }) => {
           grid-template-columns: 8fr 1fr 8fr;
           list-style: none;
           font-size: 11px;
-          color: ${theme === THEME_DARK ? "white" : "#aaa"};
+          color: white;
         }
 
         .goal-home {

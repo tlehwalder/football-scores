@@ -22,6 +22,7 @@ const MatchList = ({ matches }) => {
           }, 0.2);
           border-radius: 12px;
           font-size: x-large;
+          width: 85%;
         }
         @media (max-width: ${BREAKPOINT_MEDIUM_IN_PX}) {
           ul {
