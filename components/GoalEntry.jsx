@@ -20,7 +20,7 @@ const GoalEntry = ({ isHomeGoal, playerName, matchMinute }) => {
           display: flex;
           margin: 5px 0;
           display: grid;
-          grid-template-columns: 8fr 1fr 8fr;
+          grid-template-columns: 4fr 0.3fr 4fr;
           list-style: none;
           font-size: 11px;
         }
@@ -28,6 +28,7 @@ const GoalEntry = ({ isHomeGoal, playerName, matchMinute }) => {
         .goal-home {
           display: flex;
           justify-content: end;
+          justify-self: end;
           margin-right: 3em;
         }
       `}</style>
