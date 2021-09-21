@@ -2,7 +2,7 @@ import fetch from "isomorphic-unfetch";
 
 import MatchDayPage from "../components/MatchDay";
 
-const SEASON_YEAR = 2020;
+const SEASON_YEAR = 2021;
 
 const Scores = ({ matchDay, matches }) => {
   return <MatchDayPage matchDay={matchDay} matches={matches} />;
