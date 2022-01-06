@@ -10,3 +10,6 @@ Run locally:
 ## Features
 - dark and light mode
 - matchday browsing
+
+## TODO
+- team history
