@@ -1,10 +1,11 @@
-import React from "react";
+import React from "preact";
+import {useContext} from "preact/hooks";
 import MatchEntry from "./MatchEntry";
 import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";
 import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 
 const MatchList = ({ matches }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   return (
     <>

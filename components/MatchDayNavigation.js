@@ -1,9 +1,9 @@
-import React from "react";
+import { useContext } from "preact/hooks";
 import Link from "next/link";
 import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 
 const MatchDayNavigaiton = ({ matchDay }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   return (
     <div>

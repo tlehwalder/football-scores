@@ -1,12 +1,12 @@
-import React from "react";
+import {useContext, useState} from "preact/hooks";
 import ThemeContext, { THEME_LIGHT, THEME_DARK } from "../context/ThemeContext";
 import startCase from "lodash/startCase";
 import { parseCookies, setCookie } from "nookies";
 
 const Main = ({ children }) => {
   const cookies = parseCookies();
-  const theme = React.useContext(ThemeContext);
-  const [themeToggleState, setThemeToggleState] = React.useState(
+  const theme = useContext(ThemeContext);
+  const [themeToggleState, setThemeToggleState] = useState(
     cookies.theme || theme
   );
 

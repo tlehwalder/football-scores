@@ -1,9 +1,9 @@
-import React from "react";
+import {useContext} from "preact/hooks";
 
 import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 
 const GoalEntry = ({ isHomeGoal, playerName, matchMinute }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   const homeGoal = isHomeGoal ? playerName : null;
   const awayGoal = !isHomeGoal ? playerName : null;

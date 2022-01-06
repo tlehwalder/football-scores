@@ -1,3 +1,4 @@
+import {useContext} from "preact/hooks"; 
 import Header from "../components/Header";
 import MatchList from "../components/MatchList";
 import MatchDayNavigation from "../components/MatchDayNavigation";
@@ -5,7 +6,7 @@ import Main from "../layout/Main";
 import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 
 const MatchDayPage = ({ matches, matchDay }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   return (
     <Main>

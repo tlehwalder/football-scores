@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "preact";
+import { useState } from "preact/hooks";
+
 import GoalEntry from "./GoalEntry";
 
 function calculateScoreFromGoal({ lastScore, goal }) {}

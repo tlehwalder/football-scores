@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "preact";
+import {useContext, useState} from "preact/hooks";
 import get from "lodash/get";
 import isEmpty from "lodash/isEmpty";
 import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";
@@ -7,7 +8,7 @@ import GoalList from "./GoalList";
 import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 
 const MatchEntry = ({ match }) => {
-  const theme = React.useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
 
   const [isGoalListShown, setGoalListShown] = useState(false);
 
