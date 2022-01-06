@@ -26,7 +26,7 @@ const Main = ({ children }) => {
         rel="stylesheet"
       />
       <ThemeContext.Provider value={themeToggleState}>
-        <span onClick={toggleTheme}>{startCase(themeToggleState)}</span>
+        <span onClick={toggleTheme}>{startCase(themeToggleState === THEME_DARK ? THEME_LIGHT : THEME_DARK)}</span>
         <div className="main">{children}</div>
       </ThemeContext.Provider>
       <style jsx global>{`
