@@ -1,6 +1,5 @@
 import {useContext, useState} from "preact/hooks";
 import ThemeContext, { THEME_LIGHT, THEME_DARK } from "../context/ThemeContext";
-import startCase from "lodash/startCase";
 import { parseCookies, setCookie } from "nookies";
 
 const Main = ({ children }) => {
@@ -26,7 +25,7 @@ const Main = ({ children }) => {
         rel="stylesheet"
       />
       <ThemeContext.Provider value={themeToggleState}>
-        <span onClick={toggleTheme}>{startCase(themeToggleState === THEME_DARK ? THEME_LIGHT : THEME_DARK)}</span>
+        <span onClick={toggleTheme}>{themeToggleState === THEME_DARK ? THEME_LIGHT : THEME_DARK}</span>
         <div className="main">{children}</div>
       </ThemeContext.Provider>
       <style jsx global>{`
