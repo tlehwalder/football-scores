@@ -111,7 +111,7 @@ const MatchEntry = ({ match }) => {
         }
 
         .score-line-wrapper:nth-of-type(2n+1) {
-          background-color: #ff6600;
+          background-color: #21b00a;
           color: white;
         }
         @media (max-width: ${BREAKPOINT_MEDIUM_IN_PX}) {
