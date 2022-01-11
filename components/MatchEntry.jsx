@@ -110,6 +110,14 @@ const MatchEntry = ({ match }) => {
           list-style: none;
         }
 
+        li:first-of-type {
+          border-radius: 15px 15px 0 0;
+        }
+
+        li:last-of-type {
+          border-radius: 0 0 15px 15px;
+        }
+
         .score-line-wrapper:nth-of-type(2n+1) {
           background-color: #28d1c5;
           color: white;
