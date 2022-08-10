@@ -1,4 +1,4 @@
-import { useContext } from "preact/hooks";
+import { useContext } from "react";
 import Link from "next/link";
 import ThemeContext, { THEME_DARK } from "../context/ThemeContext";
 

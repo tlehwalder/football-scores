@@ -1,5 +1,4 @@
-import React from "preact";
-import { useState } from "preact/hooks";
+import React, { useState } from "react";
 
 import GoalEntry from "./GoalEntry";
 
@@ -11,11 +10,11 @@ const GoalList = ({ goals }) => {
   return (
     <>
       <ul>
-        {goals.map(goal => {
+        {goals.map((goal) => {
           const {
             ScoreTeam1: nextScoreHome,
             MatchMinute: matchMinute,
-            GoalGetterName: playerName
+            GoalGetterName: playerName,
           } = goal;
 
           const isHomeGoal = nextScoreHome !== scoreHome;

@@ -1,4 +1,4 @@
-import { createContext } from "preact";
+import { createContext } from "react";
 import { parseCookies, setCookie } from "nookies";
 
 export const THEME_DARK = "dark";

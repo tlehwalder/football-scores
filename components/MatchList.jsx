@@ -1,5 +1,4 @@
-import React from "preact";
-import {useContext} from "preact/hooks";
+import React, { useContext } from "react";
 import MatchEntry from "./MatchEntry";
 import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";
 import ThemeContext, { THEME_DARK } from "../context/ThemeContext";

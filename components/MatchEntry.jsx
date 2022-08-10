@@ -1,5 +1,4 @@
-import React from "preact";
-import {useContext, useState} from "preact/hooks";
+import React, { useContext, useState } from "react";
 import get from "lodash/get";
 import isEmpty from "lodash/isEmpty";
 import { BREAKPOINT_MEDIUM_IN_PX } from "../layout/breakpoints";

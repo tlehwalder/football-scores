@@ -1,4 +1,4 @@
-import {useContext} from "preact/hooks"; 
+import { useContext } from "react";
 import Header from "../components/Header";
 import MatchList from "../components/MatchList";
 import MatchDayNavigation from "../components/MatchDayNavigation";
